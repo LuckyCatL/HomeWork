@@ -160,7 +160,7 @@ public class HomeWork01 {
          *  *****
          */
         for (int i = 1; i <= 5; i++) {
-            for(int j =1;j<=i;j++){
+            for (int j = 1; j <= i; j++) {
                 System.out.print("*");
             }
             System.out.print("\n");
@@ -175,7 +175,7 @@ public class HomeWork01 {
          * *
          */
         for (int i = 5; i >= 1; i--) {
-            for(int j =1;j<=i;j++){
+            for (int j = 1; j <= i; j++) {
                 System.out.print("*");
             }
             System.out.print("\n");
@@ -237,6 +237,70 @@ public class HomeWork01 {
 
         }
 
+        /**
+         * 接收用户输入的一个整数num，判断它的正负零值，正数则输出"+"，负数则输出"-"，0则输出"0"
+         */
+        System.out.println("请输入一个数字");
+        int num = scanner.nextInt();
+        if (num > 0) {
+            System.out.println("正数");
+        } else if (num < 0) {
+            System.out.println("负数");
+        } else {
+            System.out.println(0);
+        }
 
+        /**
+         * 接收用户输入的年份year和月份month，计算该年该月的天数，并输出
+         */
+        System.out.println("请输入一个年份");
+        int ye = scanner.nextInt();
+        System.out.println("请输入一个月份");
+        int mu = scanner.nextInt();
+        switch (mu) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                System.out.println("31天");
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                System.out.println("30天");
+            case 2:
+                System.out.println(ye % 4 == 0 && ye % 100 != 0 || ye % 400 == 0 ? "29天" : "28天");
+                break;
+            default:
+                System.out.println("请输入正确月份");
+        }
+
+        /**
+         * 利用循环语句for计算数字1到100的和，并输出
+         */
+        int sum100 = 0;
+        for (int i = 1; i <= 100; i++) {
+            sum100 += i;
+        }
+        System.out.println("1到100的和是"+sum100);
+
+        /**
+         * 输出1900到2023年之间所有的闰年(每够10个年份，换一行)
+         */
+        int count = 0;
+        for (int i = 1900;i<=2023;i++){
+            if(i % 4 == 0 && i % 100 != 0 || i % 400 == 0){
+                System.out.print(i+"\t");
+                count++;
+            }
+            if(count==10){
+                System.out.print("\n");
+                count=0;
+            }
+        }
     }
 }
